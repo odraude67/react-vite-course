@@ -19,7 +19,10 @@ function TaskForm({createTask}){
         <form onSubmit={handleSubmit}>
             <input placeholder="Escribe tu tarea" 
             onChange={(e) => setTitle(e.target.value)}
-            value={title}/>
+            value={title}
+            /* Propiedad para que el cursor este automaticamente sobre el input
+                Al momento de entrar o recargar la pagina */
+            autoFocus/>
 
             <textarea placeholder="Descripcion de la tarea"
             onChange={e => setDescription(e.target.value)}
