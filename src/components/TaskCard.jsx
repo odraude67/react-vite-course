@@ -1,6 +1,3 @@
-/* Quitamos el id de TaskCard */
-/* <div key={task.id}> */
-
 function TaskCard({task}){
     return(
         <div>
