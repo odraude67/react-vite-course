@@ -1,14 +1,13 @@
-import {tasks as data} from './tasks'
-import { useEffect, useState } from 'react'
+/* Ya no las necesita despues de pasarlo a App */
+/* import { useEffect, useState } from 'react' */
 
 /* Queremos mostrar estos datos en pantalla
     Entonces, tenemos que guardarlos en un estado */
 /* console.log(tasks)  Eliminado al momento de poner el alias*/
 
-function TaskList(){
-
-    const [tasks, setTasks] = useState([]);
-
+/* Tambien podriamos pasarle los props de esta forma */
+/* function TaskList({tasks}){ */
+function TaskList(props){
     /* Queremos que cuando se cargue el componente, se le 
         Asignen las tareas que tenemos en nuestro arreglo,
         pero solo cuando se cargue el componente (1 sola vez) */
@@ -21,18 +20,14 @@ function TaskList(){
         setTasks(tasks)
     }, []) */
 
-    useEffect(() =>{
-        setTasks(data);
-    }, [])
-
-    if(tasks.length === 0){
+    if(props.tasks.length === 0){
         return <h1>No hay tareas aun</h1>
     }
 
     return(
         /* OJO con las llaves y los parentesis xdd */
         <div>
-            {tasks.map((task) => (
+            {props.tasks.map((task) => (
                 <div key={task.id}>
                     {/* <div>Tarea</div> */}
                     <h1>{task.title}</h1>
