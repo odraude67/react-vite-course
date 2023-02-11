@@ -1,14 +1,16 @@
-import { useContext } from "react";
+import { useContext } from "react"
 import {TaskContext} from '../context/TaskContext'
 
-function TaskCard({task, deleteTask}){
+/* En este caso no podemos pasar task desde el contexto, porque en este caso TaskList lo esta recorriendo
+    Entonces eso si lo tenemos que pasar como parametro, o sea es algo que se va ejecutando conforme
+    va recorriendo el arreglo, no es algo que tengamos fijo en el estado */
+    
+    /* Pero el taskDelete, no, entonces ese si se lo podemos pasar por el contexto */
 
-    /* Para utilizar el contexto
-        Pero podemos tener varios contextos, por eso es importante
-        El nombre del contexto */
+/* function TaskCard({task, deleteTask}){ */
+function TaskCard({task}){
 
-    const valor = useContext(TaskContext)
-    console.log(valor)
+    const {deleteTask} = useContext(TaskContext)
 
     return(
         <div>
