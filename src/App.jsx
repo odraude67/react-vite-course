@@ -5,10 +5,12 @@ function App(){
 
   return(
     <>
-      {/* <TaskForm createTask = {createTask}/>
-      <TaskList deleteTask = {deleteTask} tasks={tasks}/> */}
-      <TaskForm/>
-      <TaskList/>
+    <main className='bg-zinc-900 h-screen'>
+      <div className='container mx-auto p-10'>
+        <TaskForm/>
+        <TaskList/>
+      </div>
+    </main>
     </>
   )
 }
