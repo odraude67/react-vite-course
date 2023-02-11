@@ -1,19 +1,19 @@
-import TaskContext from '../context/TaskContext'
+import { useContext } from "react";
+import {TaskContext} from '../context/TaskContext'
 
 function TaskCard({task, deleteTask}){
 
-    /* function mostrarAlerta(){
-        alert(task.id);
+    /* Para utilizar el contexto
+        Pero podemos tener varios contextos, por eso es importante
+        El nombre del contexto */
 
-    }*/
+    const valor = useContext(TaskContext)
+    console.log(valor)
 
     return(
         <div>
             <h1>{task.title}</h1>
             <p>{task.description}</p>
-            {/* Cada vez que hacemos click, estamos accediendo al arreglo de tareas
-                Esto es util, porque significa que desde aqui podremos eliminar */}
-            {/* <button onClick={deleteTask}> */}
             <button onClick={() => deleteTask(task.id)}>
                 Eliminar Tarea
             </button>
